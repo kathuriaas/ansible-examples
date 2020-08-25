@@ -1,0 +1,13 @@
+---
+    - name: Example Playbook-01
+      gather_facts: false
+      hosts: "{{ server_list }}"
+      vars_files:
+        - "../.env_setup"
+      tasks:
+        - name: Test ping
+          ping:
+        - name: List files
+          shell: ls -la
+        - name: test pwd
+          shell: pwd
