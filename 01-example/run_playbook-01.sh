@@ -29,6 +29,7 @@ if [ "$is_all" = "all" ]; then
 echo "ALL parameter is not allowed. Exiting script. Please provide comma separated list of server names."
 exit
 else
+export ANSIBLE_PYTHON_INTERPRETER=/usr/bin/python3
 export ANSIBLE_STDOUT_CALLBACK=debug
-ansible-playbook --extra-vars "server_list=${server_list}" -i ${inventory_file} -u ssh_user -v ${CURR_DIR}/playbooks/playbook-01.yml
+ansible-playbook --extra-vars "server_list=${server_list}" -i ${inventory_file} -u ssh_user -vv ${CURR_DIR}/playbooks/playbook-01.yml
 fi

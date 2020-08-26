@@ -4,10 +4,5 @@
       hosts: "{{ server_list }}"
       vars_files:
         - "../.env_setup"
-      tasks:
-        - name: Test ping
-          ping:
-        - name: List files
-          shell: ls -la
-        - name: test pwd
-          shell: pwd
+      roles:
+        - role-01
