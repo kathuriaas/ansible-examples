@@ -1,6 +1,6 @@
 - name: Test ping
   ping:
-- name: List files
-  shell: ls -l
 - name: test script module
-  script: script-01.sh
+  script: script-01.sh "{{ key1 }}"
+- name: List files
+  shell: "ls -l *{{ key1 }}*"
