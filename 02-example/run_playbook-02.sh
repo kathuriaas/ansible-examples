@@ -26,5 +26,8 @@ echo "ALL parameter is not allowed. Exiting script. Please provide comma separat
 exit
 else
 export ANSIBLE_STDOUT_CALLBACK=debug
-ansible-playbook --extra-vars "server_list=${server_list}" -i ${inventory_file} -u ssh_user -v ${CURR_DIR}/playbooks/playbook-01.yml
+export ANSIBLE_LOG_PATH=/tmp/ansible
+source ${CURR_DIR}/.env_setup
+ansible-playbook --extra-vars "server_list=${server_list}" -i ${inventory_file} -u ssh_user -vv ${CURR_DIR}/playbooks/playbook-02.yml
+echo $KEY1
 fi
