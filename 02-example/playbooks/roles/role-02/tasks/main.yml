@@ -1,0 +1,7 @@
+- name: Test ping
+  ping:
+- name: test script module
+  script: script-02.sh
+- name: test echo
+  command: echo ${KEY1}
+

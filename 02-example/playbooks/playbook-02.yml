@@ -1,0 +1,12 @@
+---
+  - name: Example Playbook-01
+    gather_facts: true
+    hosts: "{{ server_list }}"
+    environment:
+      KEY1: "{{ lookup('env','key1') }}"
+      KEY2: "{{ lookup('env','key2') }}"
+      KEY3: "{{ lookup('env','key3') }}"
+      KEY4: "{{ lookup('env','key4') }}"
+    roles:
+      - role-02
+
